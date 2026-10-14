@@ -1,0 +1,431 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Estratégia Instagram Domino's ES</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: um só visual, o mundo da marca. Fundo azul Domino's, seções como caixas brancas de pizza com aba de etiqueta, faixa vermelha correndo. */
+:root{
+  color-scheme:light;
+  --blue:#006491; --blue-dark:#004B6E; --red:#E31837; --red-dark:#B8102A;
+  --white:#FFFFFF; --ink:#0B2A3C; --muted:#4A6577; --soft:#E8F2F8; --line:#CFE0EA;
+  --display:"Rubik","Arial Black",system-ui,sans-serif;
+  --body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--blue);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0;max-width:66ch}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Abertura */
+.hero{position:relative;overflow:hidden;color:var(--white)}
+.hero .wrap{position:relative;z-index:1;padding-block:48px 40px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.hero .tag{color:#BFE0F0}
+.hero h1{font-size:clamp(42px,8vw,92px);font-weight:900;letter-spacing:-.02em;margin-block:10px 18px}
+.hero h1 .r{color:var(--white);background:var(--red);padding:0 .14em;border-radius:.12em;display:inline-block;transform:rotate(-2deg)}
+.hero p{color:#DCEEF7;font-size:18px}
+.bubbles{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.bubble{background:var(--white);color:var(--ink);border-radius:18px;padding:14px 18px;display:grid;gap:2px;min-width:150px;box-shadow:0 6px 0 var(--blue-dark)}
+.bubble b{font-family:var(--display);font-size:40px;font-weight:900;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1}
+.bubble.r b{color:var(--red)}
+.bubble span{font-size:13px;color:var(--muted)}
+.dots{position:absolute;inset:0;pointer-events:none}
+.dots i{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:rgba(255,255,255,.14);left:var(--x);top:var(--y);animation:float 7s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes float{50%{transform:translateY(-18px)}}
+
+/* Pizza desenhada */
+.pizza-stage{display:grid;place-items:center}
+.pizza{width:min(320px,70vw);aspect-ratio:1;max-width:100%;border-radius:50%;position:relative;
+  background:
+   radial-gradient(circle at 30% 32%,#C62A2A 0 7%,transparent 7.4%),
+   radial-gradient(circle at 62% 26%,#C62A2A 0 6.5%,transparent 6.9%),
+   radial-gradient(circle at 70% 58%,#C62A2A 0 7%,transparent 7.4%),
+   radial-gradient(circle at 40% 66%,#C62A2A 0 6.5%,transparent 6.9%),
+   radial-gradient(circle at 52% 46%,#C62A2A 0 5.5%,transparent 5.9%),
+   radial-gradient(circle at 24% 52%,#C62A2A 0 5%,transparent 5.4%),
+   repeating-conic-gradient(from 0deg,transparent 0 44deg,rgba(120,60,10,.35) 44deg 45deg),
+   radial-gradient(circle,#F9D56A 0 76%,#E9A645 77% 86%,#C9813A 87% 100%);
+  box-shadow:0 18px 0 rgba(0,0,0,.18);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stamp{position:absolute;right:6%;top:4%;width:96px;height:96px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:900;font-size:15px;line-height:1.05;transform:rotate(12deg);border:3px dashed rgba(255,255,255,.7);animation:wobble 3s ease-in-out infinite}
+@keyframes wobble{50%{transform:rotate(4deg) scale(1.06)}}
+.pizza-wrap{position:relative;width:min(340px,80vw)}
+
+/* Faixa */
+.ticker{background:var(--red);color:var(--white);overflow:hidden;border-block:3px solid var(--white)}
+.ticker .row{display:flex;width:max-content;animation:run 28s linear infinite}
+.ticker span{font-family:var(--display);font-weight:800;font-size:18px;padding:10px 18px;white-space:nowrap;letter-spacing:.02em}
+.ticker span::after{content:"●";margin-left:36px;font-size:12px;vertical-align:middle}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* Navegação */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--blue-dark)}
+nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav a{flex:none;font-weight:700;font-size:13px;text-decoration:none;color:var(--white);padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.12);transition:background .2s,transform .2s}
+nav a:hover,nav a:focus-visible{background:var(--red);transform:translateY(-2px);outline:none}
+
+/* Caixas */
+main{padding-block:36px 56px;display:grid;gap:40px}
+.box{background:var(--white);border-radius:22px;padding:28px;position:relative;box-shadow:0 10px 0 var(--blue-dark);display:grid;gap:22px;scroll-margin-top:70px}
+.box>.label{position:absolute;top:-14px;left:24px;background:var(--red);color:var(--white);font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.06em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+.box h2{font-size:clamp(28px,4.5vw,42px);font-weight:900;color:var(--blue);letter-spacing:-.01em}
+.box h3{font-size:20px;font-weight:800}
+.lead{font-size:17px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.grid2>*,.grid3>*{min-width:0}
+.tile{background:var(--soft);border-radius:16px;padding:18px;display:grid;gap:8px;align-content:start;transition:transform .25s}
+.tile:hover{transform:translateY(-4px) rotate(-.4deg)}
+.tile ul,.box ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.big{font-family:var(--display);font-size:clamp(30px,5vw,52px);font-weight:900;color:var(--red);line-height:1;text-wrap:balance}
+
+/* Duas praias */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-radius:18px;overflow:hidden;border:2px solid var(--ink)}
+.split>div{padding:20px;display:grid;gap:12px;align-content:start}
+.split .pc{background:var(--blue);color:var(--white)}
+.split .it{background:var(--red);color:var(--white)}
+.split h3{font-size:26px}
+.split dl{margin:0;display:grid;gap:10px}
+.split dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.split dd{margin:0;font-size:15px}
+.split .cap{background:rgba(255,255,255,.14);border-radius:10px;padding:10px 12px;font-size:14px}
+.split .math{font-family:var(--mono);font-size:13px;background:rgba(0,0,0,.18);border-radius:10px;padding:10px 12px;font-variant-numeric:tabular-nums}
+@media (max-width:700px){.split{grid-template-columns:1fr}}
+
+/* SWOT */
+.swot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.swot>div{border-radius:14px;padding:16px;display:grid;gap:6px;align-content:start;font-size:14px}
+.swot .f{background:var(--soft)} .swot .o{background:var(--soft)}
+.swot .w,.swot .a{background:#FDE8EB}
+.swot h4{font-size:16px}
+@media (max-width:560px){.swot{grid-template-columns:1fr}}
+
+/* Tabelas */
+.tbl{overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--blue);color:var(--white);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;white-space:nowrap}
+
+/* Paleta */
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;align-items:center;gap:10px;background:var(--soft);border-radius:999px;padding:6px 14px 6px 6px;font-size:14px}
+.sw i{width:34px;height:34px;border-radius:50%;border:2px solid var(--line)}
+.sw small{font-family:var(--mono);color:var(--muted)}
+
+/* Pilares */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.pillar{border-radius:16px;padding:16px;color:var(--white);display:grid;gap:6px;align-content:start;transition:transform .25s}
+.pillar:nth-child(odd){background:var(--blue)} .pillar:nth-child(even){background:var(--red)}
+.pillar:hover{transform:rotate(-1.5deg) scale(1.02)}
+.pillar b{font-family:var(--display);font-size:19px}
+.pillar span{font-size:14px;opacity:.92}
+.pillar small{font-family:var(--mono);font-size:11px;opacity:.85}
+
+/* Vídeos */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.video{border:2px solid var(--ink);border-radius:18px;padding:18px;display:grid;gap:10px;align-content:start;position:relative;background:var(--white);transition:transform .25s,box-shadow .25s}
+.video:hover{transform:translateY(-5px);box-shadow:0 8px 0 var(--ink)}
+.video .num{position:absolute;top:-16px;right:16px;width:40px;height:40px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:18px;border:2px solid var(--ink)}
+.video .ref{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.video h4{font-size:19px;color:var(--blue);padding-right:40px}
+.video .why{font-size:14px;color:var(--muted)}
+.video .idea{background:var(--soft);border-radius:12px;padding:12px;font-size:14px;display:grid;gap:4px}
+.video .idea b{color:var(--ink)}
+.pill{justify-self:start;font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;color:var(--white)}
+.pill.pc{background:var(--blue)} .pill.it{background:var(--red)} .pill.ambos{background:var(--ink)}
+.watch{justify-self:start;display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:14px;text-decoration:none;color:var(--white);background:var(--red);padding:9px 16px;border-radius:999px;transition:background .2s,transform .2s}
+.watch:hover,.watch:focus-visible{background:var(--red-dark);transform:scale(1.04);outline:none}
+.watch.off{background:var(--line);color:var(--muted);pointer-events:none}
+
+/* Promos */
+.promo{border-radius:18px;padding:20px;display:grid;gap:10px;align-content:start;background:var(--soft);border:2px dashed var(--blue)}
+.promo.hot{background:var(--red);color:var(--white);border-color:var(--white);box-shadow:0 0 0 2px var(--red)}
+.promo .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.promo h3{font-size:21px}
+.promo .m{font-size:14px;border-top:1px solid currentColor;padding-top:10px;opacity:.95}
+
+/* Perfil */
+.phone{max-width:360px;border:3px solid var(--ink);border-radius:28px;padding:22px 20px;display:grid;gap:12px;background:var(--white)}
+.phone .top{display:flex;gap:12px;align-items:center}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:var(--white);font-family:var(--display);font-weight:900;font-size:12px;text-align:center;border:3px solid var(--red);flex:none}
+.phone .name{font-weight:800}
+.bio{white-space:pre-line;font-size:14px}
+.bio-link{font-family:var(--mono);font-size:12px;color:var(--blue)}
+button.cp{justify-self:start;font-family:var(--body);font-weight:700;font-size:13px;border:0;background:var(--blue);color:var(--white);border-radius:999px;padding:7px 14px;cursor:pointer;transition:transform .2s}
+button.cp:hover{transform:scale(1.05)}
+button.cp:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.hls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.hl{background:var(--soft);border-radius:16px;padding:14px;display:grid;gap:8px;align-content:start}
+.hl .ring{width:52px;height:52px;border-radius:50%;background:var(--white);border:3px solid var(--red);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:11px;color:var(--blue)}
+.hl pre{margin:0;white-space:pre-wrap;font-family:var(--body);font-size:13px;background:var(--white);border-radius:10px;padding:10px}
+.pins{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pin{border-radius:16px;padding:16px;display:grid;gap:8px;align-content:start;background:var(--ink);color:var(--white)}
+.pin .k{font-family:var(--mono);font-size:11px;color:#9FD0E8;text-transform:uppercase;letter-spacing:.06em}
+.pin h4{font-size:18px}
+.pin p{font-size:14px;color:#D5E6F0}
+
+.note{background:#FFF4D6;border-radius:12px;padding:12px 14px;font-size:14px}
+footer{color:#CFE6F2;font-size:13px;padding-block:8px 40px}
+footer a{color:var(--white)}
+
+.pop{animation:pop .7s cubic-bezier(.2,1.4,.4,1) both}
+.pop2{animation-delay:.12s}.pop3{animation-delay:.24s}
+@keyframes pop{from{transform:translateY(14px) scale(.97)}to{transform:none}}
+
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.pizza-wrap{width:min(240px,70vw);justify-self:center}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<header class="hero">
+  <div class="dots" aria-hidden="true">
+    <i style="--s:22px;--x:6%;--y:18%;--d:0s"></i><i style="--s:14px;--x:44%;--y:10%;--d:1.2s"></i>
+    <i style="--s:30px;--x:52%;--y:78%;--d:.6s"></i><i style="--s:12px;--x:18%;--y:84%;--d:2s"></i>
+    <i style="--s:18px;--x:90%;--y:86%;--d:1.6s"></i><i style="--s:10px;--x:34%;--y:46%;--d:.3s"></i>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="tag pop">Projeto de social media · Vila Velha · out 2026</span>
+      <h1 class="pop pop2">Estratégia para o Instagram <span class="r">Domino's ES</span></h1>
+      <p class="pop pop3">Duas lojas, dois públicos e um perfil parado. O plano é vender a pizza favorita de cada um, rápido, e provar no balcão quem chegou pelo Insta.</p>
+      <div class="bubbles">
+        <div class="bubble pop pop2"><b>384</b><span>seguidores</span></div>
+        <div class="bubble r pop pop3"><b>80</b><span>semanas sem post próprio</span></div>
+      </div>
+    </div>
+    <div class="pizza-wrap" aria-hidden="true">
+      <div class="pizza"></div>
+      <div class="stamp">TERÇA<br>EM<br>DOBRO</div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="row">
+  <span>SUA PIZZA FAVORITA, RÁPIDO</span><span>PRAIA DA COSTA</span><span>ITAPARICA</span><span>TERÇA É EM DOBRO</span><span>FEITA À MÃO</span>
+  <span>SUA PIZZA FAVORITA, RÁPIDO</span><span>PRAIA DA COSTA</span><span>ITAPARICA</span><span>TERÇA É EM DOBRO</span><span>FEITA À MÃO</span>
+</div></div>
+
+<nav aria-label="Seções"><div class="wrap">
+  <a href="#estrategia">Estratégia</a><a href="#publicos">Os 2 públicos</a><a href="#analise">SWOT e mercado</a>
+  <a href="#marca">Marca</a><a href="#videos">Vídeos</a><a href="#promos">Promos</a><a href="#perfil">Perfil</a>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- ESTRATÉGIA -->
+  <section class="box" id="estrategia">
+    <span class="label">01 · Estratégia</span>
+    <h2>Sua pizza favorita, rápido.</h2>
+    <p class="lead">Esse é o posicionamento. O artesanal entra como prova: a massa fermenta 48 horas e é aberta à mão na loja. Mas quem pede quer duas coisas: o sabor que ama e a pizza chegando logo.</p>
+    <div class="grid3">
+      <div class="tile"><h3>Objetivo do mês</h3><ul><li>Reativar o perfil com vídeos novos</li><li>Testar uma estratégia para cada loja</li><li>Medir quem vem pelo Insta com uma promo de balcão</li></ul></div>
+      <div class="tile"><h3>Nicho</h3><p>Pizza delivery na orla de Vila Velha.</p><p><b>Subnichos:</b> quem escolhe pelo sabor (Praia da Costa) e quem escolhe pela promo (Itaparica).</p></div>
+      <div class="tile"><h3>Diferenciais</h3><ul><li>Massa artesanal, aberta à mão</li><li>Sai do forno a 105°C</li><li>Terça: a 2ª pizza sai de graça</li><li>Pedido rastreado em tempo real</li><li>Marca que todo mundo conhece</li></ul></div>
+    </div>
+  </section>
+
+  <!-- PÚBLICOS -->
+  <section class="box" id="publicos">
+    <span class="label">02 · Público-alvo</span>
+    <h2>Uma orla, dois jeitos de pedir pizza</h2>
+    <p class="lead">Moradores de apartamento de 20 a 40 anos, que pedem entre 18h e 21h e decidem em minutos. A diferença está no motivo da escolha, e cada loja fala com um.</p>
+    <div class="split">
+      <div class="pc">
+        <span class="tag">Loja Praia da Costa</span>
+        <h3>Escolhe pelo sabor</h3>
+        <dl>
+          <dt>Quem é</dt><dd>Público A e B. Bia, 29, advogada, pede a mesma pizza favorita toda sexta e não troca por desconto.</dd>
+          <dt>No vídeo</dt><dd>Close do sabor, queijo puxando, massa sendo aberta, sobremesa. Ritmo bonito, cara de "parada obrigatória".</dd>
+          <dt>Na legenda</dt><dd class="cap">"Qual é a sua favorita? A nossa é essa, saindo agora do forno. Pede pelo link da bio e chega rapidinho na Praia da Costa."</dd>
+          <dt>Contra as outras pizzarias</dt><dd>Disk Pizza Paulista e Vila Rusticana vendem salão. A Domino's vende o sabor certo em casa, sem esperar mesa.</dd>
+          <dt>A conta</dt><dd class="math">Grande de 35 cm ≈ R$ 106,90 cheia<br>8 fatias ≈ R$ 13,36 por fatia<br>Meio a meio = 2 favoritas numa pizza</dd>
+        </dl>
+      </div>
+      <div class="it">
+        <span class="tag">Loja Itaparica</span>
+        <h3>Escolhe pela promo</h3>
+        <dl>
+          <dt>Quem é</dt><dd>Lucas, 23, mora com amigos, racha tudo no Pix e só pede quando tem promoção.</dd>
+          <dt>No vídeo</dt><dd>Duas caixas chegando, a conta por pessoa na tela, humor de resenha, "envia pra quem racha contigo".</dd>
+          <dt>Na legenda</dt><dd class="cap">"Terça é em dobro: pediu uma, a segunda é por nossa conta. Dá uns R$ 21 por pessoa. Marca quem paga a sua."</dd>
+          <dt>Contra as outras pizzarias</dt><dd>Maledita vende experiência napolitana; o iFood vende cupom genérico. A Domino's vende a promo mais simples da orla.</dd>
+          <dt>A conta</dt><dd class="math">2 grandes no 2 por 1 ≈ R$ 106,90<br>16 fatias para 5 pessoas<br>≈ R$ 21 por pessoa (antes R$ 43)</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note"><b>Preços de referência</b> de outra loja da rede no app. Confirmar o cardápio das lojas de Vila Velha antes de postar qualquer valor.</p>
+  </section>
+
+  <!-- ANÁLISE -->
+  <section class="box" id="analise">
+    <span class="label">03 · SWOT e mercado</span>
+    <h2>Onde a Domino's ganha e onde perde</h2>
+    <div class="swot">
+      <div class="f"><h4>Forças</h4><ul><li>Marca que todo mundo conhece</li><li>Massa artesanal de verdade</li><li>Terça em dobro já famosa</li></ul></div>
+      <div class="w"><h4>Fraquezas</h4><ul><li>Perfil parado desde março de 2025</li><li>Reclamações sem resposta</li><li>Fama de fast food de máquina</li></ul></div>
+      <div class="o"><h4>Oportunidades</h4><ul><li>Ninguém mostra a massa sendo feita</li><li>Verão e Réveillon em Itaparica</li><li>Creators locais fazendo review</li></ul></div>
+      <div class="a"><h4>Ameaças</h4><ul><li>131 pizzarias só em Vila Velha</li><li>Perfis falsos com golpe no Pix</li><li>Atraso por app vira comentário público</li></ul></div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>PESTAL</th><th>O que pesa</th></tr></thead>
+      <tbody>
+        <tr><td>Político</td><td>Sorteio com prêmio por sorte precisa de autorização federal. Melhor usar concurso cultural ou brinde no balcão.</td></tr>
+        <tr><td>Econômico</td><td>Cliente sensível a preço e taxa de entrega. Por isso a conta por pessoa funciona.</td></tr>
+        <tr><td>Social</td><td>Cultura da resenha em casa e orgulho de bairro.</td></tr>
+        <tr><td>Tecnológico</td><td>App com rastreador ajuda; golpe com perfil falso atrapalha.</td></tr>
+        <tr><td>Ambiental</td><td>Praia como cenário dos vídeos; cuidado com lixo de caixa na orla.</td></tr>
+        <tr><td>Legal</td><td>Regulamento claro em toda promo e publi sinalizada.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid3">
+      <div class="tile"><h3>O que performa</h3><ul><li>Texto na tela em todo vídeo</li><li>Menos de 10 segundos</li><li>Humor e identificação</li><li>CTA "envia pra alguém"</li></ul></div>
+      <div class="tile"><h3>Concorrentes</h3><ul><li><b>Diretos:</b> Disk Pizza Paulista, Vila Rusticana, Jussaras, Maledita</li><li><b>Indiretos:</b> hambúrguer, sushi e o próprio iFood</li></ul></div>
+      <div class="tile"><h3>Como se destacar</h3><ul><li>Mostrar o processo que ninguém mostra</li><li>Falar diferente com cada bairro</li><li>Responder comentário em vídeo</li></ul></div>
+    </div>
+  </section>
+
+  <!-- MARCA -->
+  <section class="box" id="marca">
+    <span class="label">04 · Marca</span>
+    <h2>Mão na massa, papo de vizinho</h2>
+    <div class="grid2">
+      <div class="tile"><h3>Paleta</h3>
+        <div class="swatches">
+          <span class="sw"><i style="background:#006491"></i>Azul <small>#006491</small></span>
+          <span class="sw"><i style="background:#E31837"></i>Vermelho <small>#E31837</small></span>
+          <span class="sw"><i style="background:#FFFFFF"></i>Branco <small>#FFFFFF</small></span>
+        </div>
+        <p>Azul é a base, vermelho só para promo e chamada, branco para o texto sobre o vídeo.</p>
+      </div>
+      <div class="tile"><h3>Estilo de edição</h3><ul><li>Câmera na mão e luz quente do forno</li><li>Corte a cada 3 segundos</li><li>Legenda grande, branca com contorno azul</li><li>Som ambiente ligado: massa, forno, caixa abrindo</li></ul></div>
+      <div class="tile"><h3>Tom de voz</h3><p>Vizinho brincalhão e confiante. Direto, leve, assume erro sem drama.</p></div>
+      <div class="tile"><h3>Fala assim / evita</h3><ul><li><b>Sim:</b> "Essa saiu do forno agora."</li><li><b>Sim:</b> "Dá uns R$ 21 por pessoa."</li><li><b>Não:</b> "A melhor pizza do mundo!!!"</li><li><b>Não:</b> ignorar reclamação</li></ul></div>
+    </div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section class="box" id="videos">
+    <span class="label">05 · Pilares e vídeos</span>
+    <h2>Nove referências, nove ideias Domino's</h2>
+    <p class="lead">Os pilares saíram das referências que mais performam: identificação, desejo e prova.</p>
+    <div class="pillars">
+      <div class="pillar"><small>Pilar 1</small><b>Manda pra alguém</b><span>Close do produto feito pra ir pro direct.</span></div>
+      <div class="pillar"><small>Pilar 2</small><b>POV e humor</b><span>Situações de pizza que todo mundo viveu.</span></div>
+      <div class="pillar"><small>Pilar 3</small><b>Você sabia?</b><span>O processo artesanal contado como descoberta.</span></div>
+      <div class="pillar"><small>Pilar 4</small><b>Vibe de rolê</b><span>A pizza como desculpa pra juntar a galera.</span></div>
+      <div class="pillar"><small>Pilar 5</small><b>Terça em dobro</b><span>Promo com conta na tela.</span></div>
+    </div>
+
+    <div class="videos" id="videoList"></div>
+
+    <div class="tile"><h3>Repostagem</h3><p>Todo Reel vai também para TikTok (sem marca d'água, com áudio em alta), Facebook (alcança família e 35+), YouTube Shorts e status de WhatsApp das lojas. Um vídeo, cinco vitrines.</p></div>
+  </section>
+
+  <!-- PROMOS -->
+  <section class="box" id="promos">
+    <span class="label">06 · Promos que medem o Insta</span>
+    <h2>Três jeitos de saber quem veio pelo Instagram</h2>
+    <div class="grid3">
+      <div class="promo hot"><span class="k">Opção 1 · Todas as lojas do ES · 1/11 a 1/12</span><h3>Mostra o vídeo, ganha a sobremesa</h3><p>Reel no estilo "doce vai pra outro lugar". De 1º de novembro a 1º de dezembro, quem mostrar o vídeo no balcão de qualquer Domino's do Espírito Santo e comprar qualquer pizza ganha um Chocobread para experimentar.</p><p class="m"><b>Como medir:</b> a equipe marca cada sobremesa entregue numa planilha do balcão. Total no fim da semana = clientes vindos do Insta.</p></div>
+      <div class="promo"><span class="k">Opção 2 · Praia da Costa</span><h3>Cupom do seu sabor</h3><p>Stories com enquete "qual sua favorita?". O sabor vencedor ganha borda recheada grátis com o cupom INSTA no app ou WhatsApp.</p><p class="m"><b>Como medir:</b> o sistema conta os usos do cupom INSTA por loja.</p></div>
+      <div class="promo"><span class="k">Opção 3 · As duas lojas</span><h3>Comenta PIZZA</h3><p>No Reel, quem comentar a palavra PIZZA recebe no direct um código único de refrigerante grátis no próximo pedido.</p><p class="m"><b>Como medir:</b> comentários → mensagens enviadas → códigos usados. Funil completo, do Reel até a venda.</p></div>
+    </div>
+    <p class="note"><b>Antes de lançar:</b> confirmar com o franqueado qual sobremesa e brinde estão liberados e se a loja pode criar promo local.</p>
+  </section>
+
+  <!-- PERFIL -->
+  <section class="box" id="perfil">
+    <span class="label">07 · Perfil</span>
+    <h2>Bio, foto, destaques e fixados novos</h2>
+    <div class="grid2">
+      <div class="phone">
+        <div class="top"><div class="avatar">LOGO<br>OFICIAL</div><div><div class="name">dominos_es</div><div class="name" style="font-weight:500">Domino's ES</div></div></div>
+        <div class="bio" id="bio">Sua pizza favorita, rápida 🍕
+Produção artesanal
+Peça em casa, clique no link 👇</div>
+        <span class="bio-link">link: página com app, WhatsApp e iFood de cada loja</span>
+        <button class="cp" data-target="bio" type="button">Copiar bio</button>
+      </div>
+      <div class="grid2" style="align-content:start">
+        <div class="tile"><h3>Foto de perfil</h3><p>Trocar o logo com texto em fundo branco pelo símbolo oficial em branco sobre fundo azul Domino's. Pequeno no feed, o texto some; o símbolo continua legível.</p></div>
+        <div class="tile"><h3>Nome</h3><p>De "DOMINOS ESPÍRITO SANTO" para "Domino's ES", com o apóstrofo certo e curto de ler.</p></div>
+      </div>
+    </div>
+
+    <h3>Destaques</h3>
+    <div class="hls">
+      <div class="hl"><span class="ring">PEDIR</span><pre id="d1">PEÇA EM 1 TOQUE
+App: acompanhe do forno até a porta
+WhatsApp oficial de cada loja
+[confirmar números]</pre><button class="cp" data-target="d1" type="button">Copiar</button></div>
+      <div class="hl"><span class="ring">TERÇA</span><pre id="d2">TERÇA É EM DOBRO
+Pediu uma média ou grande, a segunda é por nossa conta
+Vale a de menor valor</pre><button class="cp" data-target="d2" type="button">Copiar</button></div>
+      <div class="hl"><span class="ring">SABORES</span><pre id="d3">QUAL É A SUA?
+Os mais pedidos da semana
+Doces pra fechar a noite</pre><button class="cp" data-target="d3" type="button">Copiar</button></div>
+      <div class="hl"><span class="ring">LOJAS</span><pre id="d4">PRAIA DA COSTA
+(27) 3063-6303
+
+ITAPARICA
+(27) 4040-4777
+[endereços e horários]</pre><button class="cp" data-target="d4" type="button">Copiar</button></div>
+      <div class="hl"><span class="ring">À MÃO</span><pre id="d5">VOCÊ SABIA?
+A massa fermenta 48h
+e é aberta à mão, aqui na loja</pre><button class="cp" data-target="d5" type="button">Copiar</button></div>
+      <div class="hl"><span class="ring">OFICIAL</span><pre id="d6">CUIDADO COM GOLPE
+A gente não pede Pix por direct
+Pedido só no app, site, WhatsApp oficial e lojas</pre><button class="cp" data-target="d6" type="button">Copiar</button></div>
+    </div>
+
+    <h3>3 posts fixados</h3>
+    <div class="pins">
+      <div class="pin"><span class="k">Fixado 1 · Reel POV</span><h4>Terça é em dobro</h4><p>Título na tela: "POV: era pra ser uma terça normal, mas sua pizzaria favorita está fazendo promoção de pizza em dobro". Reação de surpresa, duas caixas chegando e o link da bio no final.</p></div>
+      <div class="pin"><span class="k">Fixado 2 · Carrossel</span><h4>Você sabia que a Domino's faz a pizza artesanalmente?</h4><p>Capa com a pergunta, slides com a massa aberta à mão, o forno e a pizza chegando.</p></div>
+      <div class="pin"><span class="k">Fixado 3 · Reel · sugestão</span><h4>Mostra esse vídeo no balcão</h4><p>A promo do Chocobread em todas as Domino's do ES, de 1º de novembro a 1º de dezembro. Fica fixado enquanto a ação roda e mede quem veio pelo Insta.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Fontes: <a href="https://grandesnomesdapropaganda.com.br/anunciantes/para-reforcar-atributo-de-massa-fresca-aberta-a-mao-dominos-provoca-concorrencia-em-nova-campanha/" target="_blank" rel="noopener">massa aberta à mão</a> · <a href="https://www.abcdacomunicacao.com.br/para-reforcar-atributo-de-massa-fresca-aberta-a-mao-dominos-provoca-concorrencia-em-nova-campanha-digital/" target="_blank" rel="noopener">forno a 105°C</a> · <a href="https://catracalivre.com.br/gastronomia/6-redes-de-restaurantes-em-que-voce-compra-1-item-e-leva-outro-de-graca/" target="_blank" rel="noopener">terça 2 por 1</a> · <a href="https://esbrasil.com.br/es-tem-670-pizzarias-em-operacao/" target="_blank" rel="noopener">131 pizzarias em Vila Velha</a>. Perfil analisado em 14/10/2026. Projeto de Brunna Walker.</p>
+</footer>
+
+<script>
+/* Cole o link de cada referência no campo link. Vazio = botão "link em breve". */
+var VIDEOS=[
+ {n:1,ref:"Teresinô Pizzaria",t:"Só te enviei pra não passar vontade",why:"Close de pizza saindo do forno, feito pra ir pro direct.",idea:"Pepperoni da Domino's saindo do forno a 105°C. Texto: \"Só te enviei pra não passar vontade sozinho\". Legenda: envia pra quem divide pizza contigo hoje.",p:"pc",pl:"Praia da Costa",link:"https://vt.tiktok.com/ZSgeW1Dtq/"},
+ {n:2,ref:"Øliver's Pizza",t:"Tenho 5 tipos de fome",why:"Lista de identificação que mostra o cardápio sem cara de anúncio.",idea:"Cada tipo de fome com um sabor Domino's, fechando na doce. CTA: comenta qual fome é a sua hoje.",p:"pc",pl:"Praia da Costa",link:"https://vt.tiktok.com/ZSgenppPY/"},
+ {n:3,ref:"Trend de áudio",t:"Tô com vontade de pizza… aonde?",why:"Trend de dúvida que vira resposta. Cada 🤷 é um corte rápido, e o final entrega a marca.",idea:"Texto: \"Tô com vontade de comer uma pizza, aonde?\" Cortes de 1s com a pessoa dando de ombros pela orla, até parar na fachada da Domino's com a caixa na mão.",p:"ambos",pl:"As duas lojas",link:""},
+ {n:4,ref:"Regalo Massas",t:"POV: todo mundo quis a minha metade",why:"Situação que todo mundo já viveu; gera \"marca aqui\".",idea:"Mesma cena com pizza meio a meio. Final: \"Na terça cada um tem a sua inteira\". Legenda com a conta da terça.",p:"it",pl:"Itaparica",link:"https://vt.tiktok.com/ZSgenTErP/"},
+ {n:5,ref:"Fernanda Vinhas · Oggi",t:"O momento wow",why:"Um plano só, satisfatório, que dispensa explicação.",idea:"Queijo puxando em câmera lenta ou a sobremesa sendo cortada. Texto: \"Parada obrigatória na Praia da Costa\".",p:"pc",pl:"Praia da Costa",link:"https://vt.tiktok.com/ZSgentMKa/"},
+ {n:6,ref:"Karol · @conhecameuestado",t:"Review sincero com notas",why:"Creator capixaba, notas honestas, credibilidade por não parecer publi.",idea:"Convidar creator local para avaliar sabor, entrega e preço com nota de 0 a 10. Aceitar a nota que vier.",p:"ambos",pl:"As duas lojas",link:"https://vt.tiktok.com/ZSgen3DV8/"},
+ {n:7,ref:"Onde Ir em SP · Trigo",t:"A pizzaria mais famosa do mundo",why:"Cada cena prova uma informação. Foi a de 29 mil curtidas.",idea:"Gancho: \"A pizzaria mais famosa do mundo e você sabia que a produção é 100% artesanal?\" Tour: massa aberta à mão, forno, sabor, sobremesa, fachada.",p:"pc",pl:"Praia da Costa",link:"https://vt.tiktok.com/ZSgenvBq8/"},
+ {n:8,ref:"Estelle · trend Friends",t:"I'm having so much fun",why:"Vende a vibe do rolê, não o produto.",idea:"Amigas arrumadas comendo Domino's na varanda de Itaparica numa terça: \"we are just eating pizza… but we're together\".",p:"it",pl:"Itaparica",link:"https://vt.tiktok.com/ZSgeWfuw6/"},
+ {n:9,ref:"Alice Caroline",t:"Doce vai pra outro lugar",why:"Role play em 3 atos. A mais viral: 427 mil curtidas.",idea:"\"Não aguento mais\" → \"sobremesa?\" → \"SIIIM\" → Chocobread da Domino's. Gancho para a promo da sobremesa no balcão (1/11 a 1/12).",p:"ambos",pl:"Todas as lojas do ES",link:"https://vt.tiktok.com/ZSgeWU6CV/"}
+];
+(function(){
+  var box=document.getElementById('videoList'); if(!box) return;
+  box.innerHTML=VIDEOS.map(function(v){
+    var btn=v.link?'<a class="watch" href="'+v.link+'" target="_blank" rel="noopener">Ver referência ▶</a>':'<span class="watch off">Link em breve</span>';
+    return '<article class="video"><span class="num">'+v.n+'</span><span class="ref">'+v.ref+'</span><h4>'+v.t+'</h4><p class="why">'+v.why+'</p><div class="idea"><b>Na Domino\'s</b><span>'+v.idea+'</span></div><span class="pill '+v.p+'">'+v.pl+'</span>'+btn+'</article>';
+  }).join('');
+})();
+document.querySelectorAll('button.cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.target); if(!el) return;
+    var label=b.textContent;
+    function done(){b.textContent='Copiado!';setTimeout(function(){b.textContent=label},1400)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado'}
+    try{navigator.clipboard.writeText(el.innerText).then(done,fallback)}catch(e){fallback()}
+  });
+});
+</script>
+
+</body></html>
